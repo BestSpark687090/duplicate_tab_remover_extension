@@ -1,0 +1,68 @@
+body{
+    background: black;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color-scheme: dark;
+}
+html{
+    width: 100%;
+    min-width: 300px;
+}
+h1{
+    margin:0;
+}
+input{
+    width: 15px;
+    border: 2px solid red;
+    border-radius: 25px;
+    appearance: none;
+    height: 15px;
+    margin-bottom: 0;
+    position: relative;
+    top:3px;
+}
+label{
+    font-size:15px;
+}
+input:checked::before{
+    content: "";
+    background-image: url(check.png);
+    background-position-y: -0.5px;
+    background-position-x: -0.25px;
+    /* opacity: 0.5; */
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    /* background-position: center; */
+    z-index: -1;
+    mask-image: radial-gradient(white 7px, transparent 2px);
+}
+/* Literally the EXACT same thing up above except the opacity's at 0.5 */
+input:hover::before{
+    content: "";
+    background-image: url(check.png);
+    background-position-y: -0.5px;
+    background-position-x: -0.25px;
+    opacity: 0.5;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    /* background-position: center; */
+    z-index: -1;
+    mask-image: radial-gradient(white 7px, transparent 2px);
+}
+button{
+    background: rgb(25, 25, 25);
+    border: 4px solid rgb(156, 94, 94);
+}
+button:hover{
+    background: rgb(100,100,100);
+}
