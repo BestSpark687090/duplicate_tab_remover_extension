@@ -1,16 +1,12 @@
 {
-  "name": "Duplicate Tab Remover",
-  "description": "Removes duplicate tabs that you may have.",
-  "version": "1.0",
-  "manifest_version": 3,
-  "action": {
-    "default_popup": "popup.html",
-    "default_icon": "icon.png"
-  },
-  "host_permissions":[
-    "<all_urls>"
-  ],
-  "permissions": [
-    "tabs"
-  ]
+    "name": "Duplicate Tab Remover",
+    "description": "Removes duplicate tabs that you may have.",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "icon.png"
+    },
+    "host_permissions": ["<all_urls>"],
+    "permissions": ["tabs"]
 }
