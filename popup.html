@@ -18,17 +18,30 @@
             The order of filtering goes url -> favicon -> title.<br />They are
             skipped if they aren't checked.
         </p>
-        <div>
-            <input type="checkbox" name="filter" id="url" value="url" checked />
-            <label for="url">Filter by URL</label>
-        </div>
-        <div>
-            <input type="checkbox" name="filter" id="favicon" value="favicon" />
-            <label for="favicon">Filter by Icon URL</label>
-        </div>
-        <div>
-            <input type="checkbox" name="filter" id="title" value="title" />
-            <label for="title">Filter by Tab Title</label>
+        <div class="options">
+            <div>
+                <input
+                    type="checkbox"
+                    name="filter"
+                    id="url"
+                    value="url"
+                    checked
+                />
+                <label for="url">Filter by URL</label>
+            </div>
+            <div>
+                <input
+                    type="checkbox"
+                    name="filter"
+                    id="favicon"
+                    value="favicon"
+                />
+                <label for="favicon">Filter by Icon URL</label>
+            </div>
+            <div>
+                <input type="checkbox" name="filter" id="title" value="title" />
+                <label for="title">Filter by Tab Title</label>
+            </div>
         </div>
         <br />
         <button id="do_thing">Do The Thing It Was Designed For</button>

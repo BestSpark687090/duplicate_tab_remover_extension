@@ -1,3 +1,20 @@
+/* css :root variables stolen from a different project of mine lol */
+:root {
+    --background: black;
+    --color: white;
+    --color-2: #bb0000;
+    --height: 20vh;
+    --radial-gradient-to-keep-in-mind: radial-gradient(circle,
+            var(--background),
+            var(--background),
+            var(--color-2),
+            var(--color-2));
+    --radial-gradient: radial-gradient(circle, var(--background), var(--color-2));
+    --linear-gradient: linear-gradient(180deg, var(--color-2), var(--background));
+    color-scheme: dark;
+    --transition-timer: 0.25s;
+}
+
 body {
     background: black;
     color: white;
@@ -7,10 +24,13 @@ body {
     justify-content: center;
     text-align: center;
     color-scheme: dark;
+    /* background: var(--linear-gradient); */
+    background-repeat: no-repeat;
 }
 
 * {
     font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;
+    transition: var(--transition-timer) all;
 }
 
 html {
@@ -20,6 +40,11 @@ html {
 
 h1 {
     margin: 0;
+    /* background: var(--linear-gradient); */
+    border-radius: 10px;
+    background: linear-gradient(180deg, var(--color-2), var(--background), var(--color-2));
+    /* background: linear-gradient(180deg, var(--background) 3px, var(--color-2), var(--background) 1px, var(--color-2) 39px, var(--background) 3px) */
+    /* background: linear-gradient(180deg, var(--color-2),var(--background), var(--color-2),var(--background)); */
 }
 
 input {
@@ -37,12 +62,14 @@ label {
     font-size: 15px;
 }
 
-input:checked::before {
+/* oh sick i can optimize this */
+input::before {
+    transition: var(--transition-timer) all;
     content: "";
     background-image: url(check.png);
     background-position-y: -0.5px;
     /* background-position-x: -0.25px; */
-    /* opacity: 0.5; */
+    opacity: 0;
     top: 0;
     position: absolute;
     width: 100%;
@@ -53,28 +80,43 @@ input:checked::before {
     mask-image: radial-gradient(white 7px, transparent 2px);
 }
 
-/* Literally the EXACT same thing up above except the opacity's at 0.5 */
+input:checked::before {
+    opacity: 1;
+    /* transition: 1s all; */
+}
+
 input:hover::before {
-    content: "";
-    background-image: url(check.png);
-    background-position-y: -0.5px;
-    background-position-x: -0.25px;
-    opacity: 0.5;
-    top: 0;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    /* background-position: center; */
-    z-index: -1;
-    mask-image: radial-gradient(white 7px, transparent 2px);
+    opacity: 0.4;
+}
+
+input:hover:checked::before {
+    opacity: 0.7;
 }
 
 button {
-    background: rgb(25, 25, 25);
+    /* background: rgb(25, 25, 25); */
+    background: var(--radial-gradient);
     border: 4px solid rgb(60, 60, 60);
 }
 
 button:hover {
-    background: rgb(100, 100, 100);
+    background: radial-gradient(circle, #333, #ff0000);
+    border: 4px solid rgb(120, 120, 120)
+}
+
+.options {
+    background: radial-gradient(circle, var(--color-2), transparent 60px);
+    border-radius: 5px;
+    /* z-index: -3; */
+}
+
+.options>* {
+    user-select: none;
+}
+
+p {
+    background: radial-gradient(circle in hsl shorter hue, var(--color-2), rgb(64, 0, 0));
+    border-radius: 10px;
+    /* margin: 5px */
+    padding: 5px;
 }
